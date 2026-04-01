@@ -2951,8 +2951,11 @@
             <div class="section-label">Early Access</div>
             <h2>Ready to ditch the hardware matrix?</h2>
             <p>Join the waitlist and be among the first AV professionals to get access to Gatrix. Early adopters receive a permanent discount.</p>
-            <form class="cta-form" onsubmit="handleSubmit(event)">
-                <input type="email" id="emailInput" placeholder="your@email.com" required>
+            <form class="cta-form" action="https://formsubmit.co/da@polywall.net" method="POST">
+                <input type="hidden" name="_subject" value="New Gatrix Waitlist Signup">
+                <input type="hidden" name="_captcha" value="false">
+                <input type="hidden" name="_next" value="https://aksakovsky.github.io/gatrix-landing/">
+                <input type="email" name="email" id="emailInput" placeholder="your@email.com" required>
                 <button type="submit" class="btn btn-primary" id="submitBtn">Join Waitlist</button>
             </form>
             <p class="cta-note">No spam. We'll only email you when Gatrix is ready for you.</p>
@@ -3038,23 +3041,6 @@
 
     setInterval(tickMetrics, 1200);
 
-    // Waitlist form
-    function handleSubmit(e) {
-        e.preventDefault();
-        const btn = document.getElementById('submitBtn');
-        const input = document.getElementById('emailInput');
-        btn.textContent = 'You\'re on the list!';
-        btn.style.background = '#059669';
-        input.disabled = true;
-        btn.disabled = true;
-        setTimeout(() => {
-            btn.textContent = 'Join Waitlist';
-            btn.style.background = '';
-            input.disabled = false;
-            btn.disabled = false;
-            input.value = '';
-        }, 3000);
-    }
 
     // Architecture hover interaction
     const archDiagram = document.getElementById('archDiagram');
